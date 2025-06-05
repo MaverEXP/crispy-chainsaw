@@ -24,9 +24,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build and push
-  uses: docker/build-push-action@v5
-  with:
-    context: .
-    file: ./Dockerfile  # ключевое исправление!
-    push: true
-    tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile  # ключевое исправление!
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest
